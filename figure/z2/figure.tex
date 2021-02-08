@@ -1,0 +1,63 @@
+\documentclass[tikz]{standalone}
+
+\usetikzlibrary{calc}
+
+\begin{document}
+
+\begin{tikzpicture}[>=stealth]
+
+\node [fill=black,black,circle,inner sep=0pt,minimum size=.5em] at (0,0) (s00) {};
+\node [fill=black,black,circle,inner sep=0pt,minimum size=.5em] at (1,0) (s10) {};
+\node [fill=black,black,circle,inner sep=0pt,minimum size=.5em] at (2,0) (s20) {};
+
+\node [fill=black,black,circle,inner sep=0pt,minimum size=.5em] at (0,1) (s01) {};
+\node [fill=black,black,circle,inner sep=0pt,minimum size=.5em] at (1,1) (s11) {};
+\node [fill=black,black,circle,inner sep=0pt,minimum size=.5em] at (2,1) (s21) {};
+
+\node [fill=black,black,circle,inner sep=0pt,minimum size=.5em] at (0,2) (s02) {};
+\node [fill=black,black,circle,inner sep=0pt,minimum size=.5em] at (1,2) (s12) {};
+\node [fill=black,black,circle,inner sep=0pt,minimum size=.5em] at (2,2) (s22) {};
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\draw [->,thick] (s00) -- (s01);
+\draw [->,thick] (s01) --(s02);
+
+\draw [->,thick] (s10) -- (s11);
+\draw [->,thick] (s11) -- (s12);
+
+\draw [->,thick] (s20) -- (s21);
+\draw [->,thick] (s21) -- (s22);
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\draw [->,thick] (s00) -- (s10);
+\draw [->,thick] (s10) -- (s20);
+
+\draw [->,thick] (s01) -- (s11);
+\draw [->,thick] (s11) -- (s21);
+
+\draw [->,thick] (s02) -- (s12);
+\draw [->,thick] (s12) -- (s22);
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\node (q0) [left of= s00,node distance=1em] {$\cdots$};
+\node (q0) [left of= s01,node distance=1em] {$\cdots$};
+\node (q0) [left of= s02,node distance=1em] {$\cdots$};
+
+\node (q0) [right of= s20,node distance=1em] {$\cdots$};
+\node (q0) [right of= s21,node distance=1em] {$\cdots$};
+\node (q0) [right of= s22,node distance=1em] {$\cdots$};
+
+\node (q0) [below of= s00,node distance=.75em] {$\vdots$};
+\node (q0) [below of= s10,node distance=.75em] {$\vdots$};
+\node (q0) [below of= s20,node distance=.75em] {$\vdots$};
+
+\node (q0) [above of= s02,node distance=1.5em] {$\vdots$};
+\node (q0) [above of= s12,node distance=1.5em] {$\vdots$};
+\node (q0) [above of= s22,node distance=1.5em] {$\vdots$};
+
+\end{tikzpicture}
+
+\end{document}
